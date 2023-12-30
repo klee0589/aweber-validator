@@ -1,5 +1,6 @@
 import React from 'react';
 import { usePasswordValidator } from '../../hooks/usePasswordValidator';
+import './PasswordValidator.css';
 
 const PasswordValidator = () => {
     const {
@@ -8,10 +9,9 @@ const PasswordValidator = () => {
         handlePassword2Change,
         handleSubmit,
     } = usePasswordValidator();
-
+    console.log(passwordStatus)
     return (
         <div className='validator-container'>
-            {passwordStatus}
             <div className='password-container'>
                 <label htmlFor="password_1" className='password-label'>Password</label>
                 <input type="text" onChange={handlePassword1Change} />
@@ -21,6 +21,9 @@ const PasswordValidator = () => {
                 <input type="text" onChange={handlePassword2Change} />
             </div>
             <button type='submit' onClick={handleSubmit}>Submit</button>
+            <div className='error-container'>
+                {passwordStatus && passwordStatus.map((message, index) => <div key={index}>{message}</div>)}
+            </div>
         </div>
     );
 }

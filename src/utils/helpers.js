@@ -1,17 +1,21 @@
 export const checkPassword = ({ passwords }) => {
     let results = [];
-    const passwordsLength = passwords.every(password => password.length > 6)
+    const identicalPasswords = passwords[0] === passwords[1];
+    const passwordsLength = passwords.every(password => password.length > 6);
     const containsUppercase = passwords.some(password => /[A-Z]/.test(password));
     const containsLowercase = passwords.some(password => /[a-z]/.test(password));
     const containsNumber = passwords.some(password => /\d/.test(password));
     const containsSpecialChar = passwords.some(password => /[!@#$%^&*()_+={}\[\]|:;'"<,>.]/.test(password));
 
-    const isValidPassword = containsUppercase && containsLowercase && containsNumber && containsSpecialChar
+    const isValidPassword = identicalPasswords && containsUppercase && containsLowercase && containsNumber && containsSpecialChar
 
     if (isValidPassword) {
         results.push(['Password is valid']);
     } else {
         results.push(['Password does not meet all criteria']);
+        if (!identicalPasswords) {
+            results.push(['Passwords are not the same'])
+        }
         if (!passwordsLength) {
             results.push(['Password length is less than 7 characters'])
         }
