@@ -2,11 +2,17 @@
 Using React, write a password entry library that meets the following requirements:
 
 [x] Has two input fields to validate the entry from the user(both inputs must match)
+
 [x] Password has a min length of 6 characters
+
 [x] Password has at least 1 uppercase character
+
 [x] Password has at least 1 lowercase character
+
 [x] Password has at least 1 number
+
 [x] Password has at least 1 special character(!@#$ %^&* ()_ -+={ [}]|:; "'<,>.)
+
 [x] Has a submit button that will trigger validation and present success or why the password entry failed
 
 # Getting Started with Create React App
