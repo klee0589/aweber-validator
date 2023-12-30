@@ -1,5 +1,5 @@
 import './App.css';
-import PasswordValidator from './components/validator/PasswordValidator'
+import PasswordValidator from './components/PasswordValidator/PasswordValidator'
 
 function App() {
   return (

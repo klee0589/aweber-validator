@@ -11,25 +11,57 @@ const PasswordValidator = () => {
         canSubmit,
         isValidPassword
     } = usePasswordValidator();
-    const [showPassword, setShowPassword] = useState(false)
+
+    const [showPassword, setShowPassword] = useState(false);
+
     return (
         <div className='validator-container'>
             <div className='validator-box'>
                 <div className='password-container'>
                     <label className='password-label'>Password</label>
-                    <input type={showPassword ? "text" : "password"} onChange={handlePassword1Change} data-testid="password-input" />
+                    <input
+                        type={showPassword ? "text" : "password"}
+                        onChange={handlePassword1Change}
+                        data-testid="password-input"
+                    />
                 </div>
                 <div className='password-container'>
                     <label className='password-label'>Confirm Password</label>
-                    <input type={showPassword ? "text" : "password"} onChange={handlePassword2Change} data-testid="confirm-password-input" />
+                    <input
+                        type={showPassword ? "text" : "password"}
+                        onChange={handlePassword2Change}
+                        data-testid="confirm-password-input"
+                    />
                 </div>
-                <button disabled={!canSubmit} className='submit-button' type='submit' onClick={handleSubmit} data-testid="submit-button">Submit</button>
+                <button
+                    disabled={!canSubmit}
+                    className='submit-button'
+                    type='submit'
+                    onClick={handleSubmit}
+                    data-testid="submit-button"
+                >
+                    Submit
+                </button>
                 <div className='password-show'>
-                    <input type="checkbox" id="view_password" name="view_password" onChange={() => setShowPassword(prevSetting => !prevSetting)} data-testid="see-password-checkbox" />
+                    <input
+                        type="checkbox"
+                        id="view_password"
+                        name="view_password"
+                        onChange={() => setShowPassword(prevSetting => !prevSetting)}
+                        data-testid="see-password-checkbox"
+                    />
                     <label>see password</label>
                 </div>
                 <div className='message-container'>
-                    {passwordStatus && passwordStatus.map((message, index) => <div className={isValidPassword && canSubmit ? 'password-success' : 'password-failed'} key={index}>{message}</div>)}
+                    {passwordStatus &&
+                        passwordStatus.map((message, index) => (
+                            <div
+                                className={isValidPassword && canSubmit ? 'password-success' : 'password-failed'}
+                                key={index}
+                            >
+                                {message}
+                            </div>
+                        ))}
                 </div>
             </div>
         </div>

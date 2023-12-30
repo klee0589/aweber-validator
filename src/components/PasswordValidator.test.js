@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import PasswordValidator from './PasswordValidator/PasswordValidator';
+import { render, fireEvent, screen } from '@testing-library/react';
+import PasswordValidator from '../components/PasswordValidator/PasswordValidator';
 
-// Mocking the usePasswordValidator hook
 jest.mock('../hooks/usePasswordValidator', () => ({
     usePasswordValidator: () => ({
         passwordStatus: ['Password is valid'],
@@ -16,42 +15,33 @@ jest.mock('../hooks/usePasswordValidator', () => ({
 
 describe('PasswordValidator', () => {
     it('renders PasswordValidator component correctly', () => {
-        const { getByTestId } = render(<PasswordValidator />);
+        render(<PasswordValidator />);
 
-        // Check if the password input fields are present
-        expect(getByTestId('password-input')).toBeInTheDocument();
-        expect(getByTestId('confirm-password-input')).toBeInTheDocument();
+        expect(screen.getByTestId('password-input')).toBeInTheDocument();
+        expect(screen.getByTestId('confirm-password-input')).toBeInTheDocument();
 
-        // Check if the "Submit" button is present
-        expect(getByTestId('submit-button')).toBeInTheDocument();
-
-        // Check if the "see password" checkbox is present
-        expect(getByTestId('see-password-checkbox')).toBeInTheDocument();
+        expect(screen.getByTestId('submit-button')).toBeInTheDocument();
+        expect(screen.getByTestId('see-password-checkbox')).toBeInTheDocument();
     });
 
     it('toggles password visibility when "see password" checkbox is clicked', () => {
-        const { getByTestId } = render(<PasswordValidator />);
+        render(<PasswordValidator />);
 
-        const viewPasswordCheckbox = getByTestId('see-password-checkbox');
+        const viewPasswordCheckbox = screen.getByTestId('see-password-checkbox');
 
-        // Initially, password fields should be of type "password"
-        expect(getByTestId('password-input').type).toBe('password');
-        expect(getByTestId('confirm-password-input').type).toBe('password');
+        expect(screen.getByTestId('password-input').type).toBe('password');
+        expect(screen.getByTestId('confirm-password-input').type).toBe('password');
 
-        // Click the "see password" checkbox
         fireEvent.click(viewPasswordCheckbox);
 
-        // After clicking, password fields should be of type "text"
-        expect(getByTestId('password-input').type).toBe('text');
-        expect(getByTestId('confirm-password-input').type).toBe('text');
+        expect(screen.getByTestId('password-input').type).toBe('text');
+        expect(screen.getByTestId('confirm-password-input').type).toBe('text');
     });
 
-    it('displays the correct password status message', () => {
-        const { getByText } = render(<PasswordValidator />);
+    it('displays the a successful password match', () => {
+        render(<PasswordValidator />);
 
-        // Check if the correct password status message is displayed
-        expect(getByText('Password is valid')).toBeInTheDocument();
+        expect(screen.getByText('Password is valid')).toBeInTheDocument();
     });
 
-    // Add more test cases as needed for the other functionalities of the component
 });
