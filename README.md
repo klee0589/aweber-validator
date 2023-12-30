@@ -19,7 +19,9 @@ Using React, write a password entry library that meets the following requirement
 
 [x] Styling!!!
 
+Default state:
 <img width="360" alt="Screenshot 2023-12-30 at 4 50 31 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/62cb315d-673e-4f79-93e3-51110c395e5b">
+
 
 <img width="360" alt="Screenshot 2023-12-30 at 4 50 39 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/9451fe8e-54aa-4db4-96c8-5345b02bf4d4">
 
