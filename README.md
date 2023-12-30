@@ -2,12 +2,34 @@
 Using React, write a password entry library that meets the following requirements:
 
 [x] Has two input fields to validate the entry from the user(both inputs must match)
+
 [x] Password has a min length of 6 characters
+
 [x] Password has at least 1 uppercase character
+
 [x] Password has at least 1 lowercase character
+
 [x] Password has at least 1 number
+
 [x] Password has at least 1 special character(!@#$ %^&* ()_ -+={ [}]|:; "'<,>.)
+
 [x] Has a submit button that will trigger validation and present success or why the password entry failed
+
+[x] Tests added for component and helper function
+
+[x] Styling!!!
+
+Default state:
+<img width="360" alt="Screenshot 2023-12-30 at 4 50 31 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/62cb315d-673e-4f79-93e3-51110c395e5b">
+
+
+<img width="360" alt="Screenshot 2023-12-30 at 4 50 39 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/9451fe8e-54aa-4db4-96c8-5345b02bf4d4">
+
+<img width="360" alt="Screenshot 2023-12-30 at 4 53 18 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/2f205c84-9882-4c6c-869c-42effb05f6e0">
+
+<img width="360" alt="Screenshot 2023-12-30 at 4 50 57 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/6ee1666d-1d3d-4256-a22c-f9d77ed08678">
+
+
 
 # Getting Started with Create React App
 
