@@ -25,7 +25,7 @@ Default state:
 
 <img width="360" alt="Screenshot 2023-12-30 at 4 50 39 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/9451fe8e-54aa-4db4-96c8-5345b02bf4d4">
 
-<img width="360" alt="Screenshot 2023-12-30 at 4 50 44 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/97027600-2f5a-45a7-ba7d-350aad6dc8ac">
+<img width="360" alt="Screenshot 2023-12-30 at 4 53 18 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/2f205c84-9882-4c6c-869c-42effb05f6e0">
 
 <img width="360" alt="Screenshot 2023-12-30 at 4 50 57 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/6ee1666d-1d3d-4256-a22c-f9d77ed08678">
 
