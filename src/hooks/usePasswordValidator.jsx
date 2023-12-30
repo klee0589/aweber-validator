@@ -9,7 +9,7 @@ export const usePasswordValidator = () => {
 
     useEffect(() => {
         if (submit) {
-            checkPassword({ passwords: [password1, password2], setPasswordStatus })
+            setPasswordStatus(checkPassword({ passwords: [password1, password2] }))
             setSubmit(toggleSubmit => !toggleSubmit)
         }
     }, [submit, password1, password2]);

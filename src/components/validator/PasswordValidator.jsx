@@ -1,7 +1,7 @@
 import React from 'react';
-import { usePasswordValidator } from '../../hooks/useValidator';
+import { usePasswordValidator } from '../../hooks/usePasswordValidator';
 
-const Validator = () => {
+const PasswordValidator = () => {
     const {
         passwordStatus,
         handlePassword1Change,
@@ -25,4 +25,4 @@ const Validator = () => {
     );
 }
 
-export default Validator;
+export default PasswordValidator;
