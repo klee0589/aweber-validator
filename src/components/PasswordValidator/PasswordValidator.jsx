@@ -17,15 +17,15 @@ const PasswordValidator = () => {
             <div className='validator-box'>
                 <div className='password-container'>
                     <label className='password-label'>Password</label>
-                    <input type={showPassword ? "text" : "password"} onChange={handlePassword1Change} />
+                    <input type={showPassword ? "text" : "password"} onChange={handlePassword1Change} data-testid="password-input" />
                 </div>
                 <div className='password-container'>
                     <label className='password-label'>Confirm Password</label>
-                    <input type={showPassword ? "text" : "password"} onChange={handlePassword2Change} />
+                    <input type={showPassword ? "text" : "password"} onChange={handlePassword2Change} data-testid="confirm-password-input" />
                 </div>
-                <button disabled={!canSubmit} className='submit-button' type='submit' onClick={handleSubmit}>Submit</button>
+                <button disabled={!canSubmit} className='submit-button' type='submit' onClick={handleSubmit} data-testid="submit-button">Submit</button>
                 <div className='password-show'>
-                    <input type="checkbox" id="view_password" name="view_password" onChange={() => setShowPassword(prevSetting => !prevSetting)} />
+                    <input type="checkbox" id="view_password" name="view_password" onChange={() => setShowPassword(prevSetting => !prevSetting)} data-testid="see-password-checkbox" />
                     <label>see password</label>
                 </div>
                 <div className='message-container'>
