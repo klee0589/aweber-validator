@@ -15,6 +15,10 @@ Using React, write a password entry library that meets the following requirement
 
 [x] Has a submit button that will trigger validation and present success or why the password entry failed
 
+[x] Tests added for component and helper function
+
+[x] Styling!!!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
