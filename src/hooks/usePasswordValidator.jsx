@@ -1,18 +1,27 @@
 import { useState, useEffect } from 'react';
-import { checkPassword } from '../utils/helpers';
+import { checkPasswordHelper } from '../utils/helpers';
 
 export const usePasswordValidator = () => {
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [passwordStatus, setPasswordStatus] = useState('');
     const [submit, setSubmit] = useState(false);
+    const canSubmit = password1 && password2
+
+    const { results, isValidPassword } = checkPasswordHelper({ passwords: [password1, password2] })
 
     useEffect(() => {
         if (submit) {
-            setPasswordStatus(checkPassword({ passwords: [password1, password2] }))
+            setPasswordStatus(results)
             setSubmit(toggleSubmit => !toggleSubmit)
         }
-    }, [submit, password1, password2]);
+    }, [submit, results]);
+
+    useEffect(() => {
+        if (!password1 || !password2 || !isValidPassword) {
+            setPasswordStatus('')
+        }
+    }, [password1, password2, isValidPassword]);
 
     const handlePassword1Change = (e) => {
         setPassword1(e.target.value);
@@ -33,5 +42,7 @@ export const usePasswordValidator = () => {
         handlePassword1Change,
         handlePassword2Change,
         handleSubmit,
+        canSubmit,
+        isValidPassword
     };
 }

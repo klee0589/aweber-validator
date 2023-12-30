@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { usePasswordValidator } from '../../hooks/usePasswordValidator';
 import './PasswordValidator.css';
 
@@ -8,21 +8,29 @@ const PasswordValidator = () => {
         handlePassword1Change,
         handlePassword2Change,
         handleSubmit,
+        canSubmit,
+        isValidPassword
     } = usePasswordValidator();
-    console.log(passwordStatus)
+    const [showPassword, setShowPassword] = useState(false)
     return (
         <div className='validator-container'>
-            <div className='password-container'>
-                <label htmlFor="password_1" className='password-label'>Password</label>
-                <input type="text" onChange={handlePassword1Change} />
-            </div>
-            <div className='password-container'>
-                <label htmlFor="password_2" className='password-label'>Confirm Password</label>
-                <input type="text" onChange={handlePassword2Change} />
-            </div>
-            <button type='submit' onClick={handleSubmit}>Submit</button>
-            <div className='error-container'>
-                {passwordStatus && passwordStatus.map((message, index) => <div key={index}>{message}</div>)}
+            <div className='validator-box'>
+                <div className='password-container'>
+                    <label className='password-label'>Password</label>
+                    <input type={showPassword ? "text" : "password"} onChange={handlePassword1Change} />
+                </div>
+                <div className='password-container'>
+                    <label className='password-label'>Confirm Password</label>
+                    <input type={showPassword ? "text" : "password"} onChange={handlePassword2Change} />
+                </div>
+                <button disabled={!canSubmit} className='submit-button' type='submit' onClick={handleSubmit}>Submit</button>
+                <div className='password-show'>
+                    <input type="checkbox" id="view_password" name="view_password" onChange={() => setShowPassword(prevSetting => !prevSetting)} />
+                    <label>see password</label>
+                </div>
+                <div className='message-container'>
+                    {passwordStatus && passwordStatus.map((message, index) => <div className={isValidPassword && canSubmit ? 'password-success' : 'password-failed'} key={index}>{message}</div>)}
+                </div>
             </div>
         </div>
     );

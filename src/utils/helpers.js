@@ -1,4 +1,5 @@
-export const checkPassword = ({ passwords }) => {
+
+export const checkPasswordHelper = ({ passwords }) => {
     let results = [];
     const identicalPasswords = passwords[0] === passwords[1];
     const passwordsLength = passwords.every(password => password.length > 6);
@@ -7,30 +8,33 @@ export const checkPassword = ({ passwords }) => {
     const containsNumber = passwords.some(password => /\d/.test(password));
     const containsSpecialChar = passwords.some(password => /[!@#$%^&*()_+={}\[\]|:;'"<,>.]/.test(password));
 
-    const isValidPassword = identicalPasswords && containsUppercase && containsLowercase && containsNumber && containsSpecialChar
+    const isValidPassword = identicalPasswords && passwordsLength && containsUppercase && containsLowercase && containsNumber && containsSpecialChar
 
     if (isValidPassword) {
-        results.push(['Password is valid']);
+        results.push(['- password is valid']);
     } else {
-        results.push(['Password does not meet all criteria']);
-        if (!identicalPasswords) {
-            results.push(['Passwords are not the same'])
+        results.push(['- password does not meet all criteria']);
+        if (passwords[0] !== passwords[1]) {
+            results.push(['- passwords are not the same'])
         }
         if (!passwordsLength) {
-            results.push(['Password length is less than 7 characters'])
+            results.push(['- password length is less than 7 characters'])
         }
         if (!containsUppercase) {
-            results.push(['requires 1 uppercase'])
+            results.push(['- requires 1 uppercase'])
         }
         if (!containsLowercase) {
-            results.push(['requires 1 lowercase'])
+            results.push(['- requires 1 lowercase'])
         }
         if (!containsNumber) {
-            results.push(['requires 1 number'])
+            results.push(['- requires 1 number'])
         }
         if (!containsSpecialChar) {
-            results.push(['requires 1 special character'])
+            results.push(['- requires 1 special character'])
         }
     }
-    return results;
+    return {
+        results,
+        isValidPassword
+    };
 }

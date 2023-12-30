@@ -1,8 +1,9 @@
 .App {
+  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
+  background-color: #eff6ff;
+  font-family: 'Poppins', sans-serif;
 }
