@@ -33,15 +33,6 @@ const PasswordValidator = () => {
                         data-testid="confirm-password-input"
                     />
                 </div>
-                <button
-                    disabled={!canSubmit}
-                    className='submit-button'
-                    type='submit'
-                    onClick={handleSubmit}
-                    data-testid="submit-button"
-                >
-                    Submit
-                </button>
                 <div className='password-show'>
                     <input
                         type="checkbox"
@@ -51,6 +42,17 @@ const PasswordValidator = () => {
                         data-testid="see-password-checkbox"
                     />
                     <label>see password</label>
+                </div>
+                <div className='submit-button-container'>
+                    <button
+                        disabled={!canSubmit}
+                        className={`${!canSubmit ? 'disabled-submit-button' : 'enabled-submit-button'} submit-button`}
+                        type='submit'
+                        onClick={handleSubmit}
+                        data-testid="submit-button"
+                    >
+                        Submit
+                    </button>
                 </div>
                 <div className='message-container'>
                     {passwordStatus &&

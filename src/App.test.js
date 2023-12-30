@@ -6,7 +6,7 @@ describe('checkPasswordHelper', () => {
 
     const result = checkPasswordHelper({ passwords });
 
-    expect(result).toEqual({ "isValidPassword": true, "results": [["- password is valid"]] });
+    expect(result).toEqual({ "isValidPassword": true, "results": [[" - password is valid"]] });
   });
 
   it('should return ["Passwords do not match"] when passwords do not match', () => {
@@ -14,7 +14,7 @@ describe('checkPasswordHelper', () => {
 
     const result = checkPasswordHelper({ passwords });
 
-    expect(result).toEqual({ "isValidPassword": false, "results": [["- password does not meet all criteria"], ["- passwords are not the same"]] });
+    expect(result).toEqual({ "isValidPassword": false, "results": [[" - password does not meet all criteria"], [" - passwords are not the same"]] });
   });
 
   it('should return criteria messages when criteria are not met', () => {
@@ -22,7 +22,7 @@ describe('checkPasswordHelper', () => {
 
     const result = checkPasswordHelper({ passwords });
 
-    expect(result).toEqual({ "isValidPassword": false, "results": [["- password does not meet all criteria"], ["- passwords are not the same"], ["- requires 1 uppercase"], ["- requires 1 number"], ["- requires 1 special character"]] });
+    expect(result).toEqual({ "isValidPassword": false, "results": [[" - password does not meet all criteria"], [" - passwords are not the same"], [" - requires 1 uppercase"], [" - requires 1 number"], [" - requires 1 special character"]] });
   });
 
   it('should return error message asking for missing uppercase and lowercase characters', () => {
@@ -30,7 +30,7 @@ describe('checkPasswordHelper', () => {
 
     const result = checkPasswordHelper({ passwords });
 
-    expect(result).toEqual({ "isValidPassword": false, "results": [["- password does not meet all criteria"], ["- passwords are not the same"], ["- requires 1 uppercase"], ["- requires 1 lowercase"]] });
+    expect(result).toEqual({ "isValidPassword": false, "results": [[" - password does not meet all criteria"], [" - passwords are not the same"], [" - requires 1 uppercase"], [" - requires 1 lowercase"]] });
   });
 
   it('should return multiple error messages for various issues', () => {
@@ -38,6 +38,6 @@ describe('checkPasswordHelper', () => {
 
     const result = checkPasswordHelper({ passwords });
 
-    expect(result).toEqual({ "isValidPassword": false, "results": [["- password does not meet all criteria"], ["- passwords are not the same"], ["- password length is less than 7 characters"], ["- requires 1 uppercase"], ["- requires 1 number"], ["- requires 1 special character"]] });
+    expect(result).toEqual({ "isValidPassword": false, "results": [[" - password does not meet all criteria"], [" - passwords are not the same"], [" - password length is less than 7 characters"], [" - requires 1 uppercase"], [" - requires 1 number"], [" - requires 1 special character"]] });
   });
 });

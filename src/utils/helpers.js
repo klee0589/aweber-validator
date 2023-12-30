@@ -11,26 +11,26 @@ export const checkPasswordHelper = ({ passwords }) => {
     const isValidPassword = identicalPasswords && passwordsLength && containsUppercase && containsLowercase && containsNumber && containsSpecialChar
 
     if (isValidPassword) {
-        results.push(['- password is valid']);
+        results.push([' - password is valid']);
     } else {
-        results.push(['- password does not meet all criteria']);
+        results.push([' - password does not meet all criteria']);
         if (passwords[0] !== passwords[1]) {
-            results.push(['- passwords are not the same'])
+            results.push([' - passwords are not the same'])
         }
         if (!passwordsLength) {
-            results.push(['- password length is less than 7 characters'])
+            results.push([' - password length is less than 7 characters'])
         }
         if (!containsUppercase) {
-            results.push(['- requires 1 uppercase'])
+            results.push([' - requires 1 uppercase'])
         }
         if (!containsLowercase) {
-            results.push(['- requires 1 lowercase'])
+            results.push([' - requires 1 lowercase'])
         }
         if (!containsNumber) {
-            results.push(['- requires 1 number'])
+            results.push([' - requires 1 number'])
         }
         if (!containsSpecialChar) {
-            results.push(['- requires 1 special character'])
+            results.push([' - requires 1 special character'])
         }
     }
     return {
