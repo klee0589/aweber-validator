@@ -19,6 +19,16 @@ Using React, write a password entry library that meets the following requirement
 
 [x] Styling!!!
 
+<img width="405" alt="Screenshot 2023-12-30 at 4 50 31 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/62cb315d-673e-4f79-93e3-51110c395e5b">
+
+<img width="370" alt="Screenshot 2023-12-30 at 4 50 39 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/9451fe8e-54aa-4db4-96c8-5345b02bf4d4">
+
+<img width="376" alt="Screenshot 2023-12-30 at 4 50 44 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/97027600-2f5a-45a7-ba7d-350aad6dc8ac">
+
+<img width="360" alt="Screenshot 2023-12-30 at 4 50 57 PM" src="https://github.com/klee0589/aweber-validator/assets/10567488/6ee1666d-1d3d-4256-a22c-f9d77ed08678">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
