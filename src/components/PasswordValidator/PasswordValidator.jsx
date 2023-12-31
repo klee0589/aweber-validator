@@ -18,19 +18,21 @@ const PasswordValidator = () => {
         <div className='validator-container'>
             <div className='validator-box'>
                 <div className='password-container'>
-                    <label className='password-label'>Password</label>
                     <input
+                        style={{ width: '100%' }}
                         type={showPassword ? "text" : "password"}
                         onChange={handlePassword1Change}
                         data-testid="password-input"
+                        placeholder="Password"
                     />
                 </div>
                 <div className='password-container'>
-                    <label className='password-label'>Confirm Password</label>
                     <input
+                        style={{ width: '100%' }}
                         type={showPassword ? "text" : "password"}
                         onChange={handlePassword2Change}
                         data-testid="confirm-password-input"
+                        placeholder="Confirm Password"
                     />
                 </div>
                 <div className='password-show'>
